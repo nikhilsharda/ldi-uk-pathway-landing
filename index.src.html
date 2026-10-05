@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LDI Online Pathway | Start Here. Go Further.</title>
+<meta name="description" content="Begin an online UK pathway in Business and Management or Accounting and Finance with LD International. Application support from MSM Unify. Potential progression is subject to academic and English language requirements.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Start Here. Go Further. | LDI with MSM Unify">
+<meta property="og:description" content="Start online with LDI, with potential progression to a UK university. Check your eligibility today.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0B0C; --ink-2:#121213; --ink-3:#1b1b1c;
+  --grey:#a3a3a3;                       /* light grey, 7:1 on ink */
+  --ldi:#F05409; --ldi-soft:#ff7a3d;    /* LDT orange, the single accent */
+  --btn-ink:#160a04;
+  --line:rgba(255,255,255,.1);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --display:'Montserrat',system-ui,sans-serif;
+  --body:'Poppins',system-ui,sans-serif;
+  /* shape system: pills for interactive, 20px for containers, 12px for inputs */
+  --r-card:20px; --r-input:12px;
+  --z-nav:40; --z-sticky:30; --z-grain:60;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--ink);color:#f3f3f3;font-family:var(--body);font-weight:300;line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+::selection{background:var(--ldi);color:var(--btn-ink)}
+:focus-visible{outline:2px solid var(--ldi-soft);outline-offset:3px;border-radius:8px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;z-index:var(--z-grain);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+.wrap{width:min(1240px,100% - 2rem);margin-inline:auto}
+section{position:relative;padding:clamp(5rem,10vw,9rem) 0}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.04;text-wrap:balance}
+h2{font-size:clamp(2rem,4.6vw,3.6rem);max-width:20ch}
+h3{font-size:1.3rem;letter-spacing:-.01em;line-height:1.2}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--ldi-soft);margin-bottom:1.2rem}
+.lead{font-size:clamp(1rem,1.4vw,1.15rem);color:#d2d2d2;max-width:54ch;margin-top:1.2rem}
+.muted{color:var(--grey)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);filter:blur(8px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.rv.in{opacity:1;transform:none;filter:none}
+
+/* buttons: ink text on orange keeps AA contrast */
+.btn{display:inline-flex;align-items:center;gap:.9rem;border:0;cursor:pointer;border-radius:999px;padding:.45rem .45rem .45rem 1.5rem;font-family:var(--display);font-weight:700;font-size:.95rem;white-space:nowrap;background:var(--ldi);color:var(--btn-ink);transition:transform .5s var(--ease),background .5s var(--ease),box-shadow .5s var(--ease);box-shadow:0 14px 40px -16px rgba(240,84,9,.8);will-change:transform}
+.btn .ar{width:2.4rem;height:2.4rem;border-radius:50%;background:var(--btn-ink);color:var(--ldi-soft);display:grid;place-items:center;transition:transform .5s var(--ease)}
+.btn .ar svg{width:16px;height:16px}
+.btn:hover{background:var(--ldi-soft)}
+.btn:hover .ar{transform:translate(2px,-2px) rotate(8deg)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.08);color:#fff;box-shadow:inset 0 0 0 1px var(--line);padding-left:1.4rem}
+.btn.ghost:hover{background:rgba(255,255,255,.16)}
+.btn.ghost .ar{background:rgba(255,255,255,.14);color:#fff}
+.link{color:#fff;font-size:.9rem;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:5px;transition:text-decoration-color .4s var(--ease)}
+.link:hover{text-decoration-color:var(--ldi-soft)}
+
+/* nav */
+nav{position:fixed;top:.9rem;left:0;right:0;z-index:var(--z-nav);display:flex;justify-content:center;pointer-events:none}
+.pill{pointer-events:auto;display:flex;align-items:center;gap:1.4rem;padding:.4rem .4rem .4rem .45rem;border-radius:999px;background:rgba(14,14,15,.7);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);box-shadow:inset 0 0 0 1px var(--line),0 20px 50px -20px rgba(0,0,0,.9);max-width:calc(100% - 1rem)}
+.plate{display:flex;align-items:center;gap:1.1rem;background:#fff;border-radius:999px;padding:.45rem 1.5rem;flex-shrink:0;box-shadow:0 8px 30px -10px rgba(0,0,0,.6)}
+.plate .vd{width:1px;height:36px;background:#cfcfcf}
+.logo{height:46px;width:auto}.logo.m{height:40px}
+.navlinks{display:flex;gap:1.3rem;font-size:.82rem;color:#d2d2d2}
+.navlinks a{transition:color .4s var(--ease)}.navlinks a:hover{color:#fff}
+.pill .btn{padding:.25rem .25rem .25rem 1.1rem;font-size:.82rem}
+.pill .btn .ar{width:2rem;height:2rem}
+
+/* hero */
+.hero{min-height:100dvh;display:flex;align-items:center;padding:6.5rem 0 3rem;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-6% 0;z-index:-2}
+.hero-bg{background:var(--ink)}
+.hero-bg img{width:118%;max-width:none;margin-left:9%;height:100%;object-fit:cover;object-position:35% 50%;filter:brightness(1.45) contrast(1.05) saturate(1.1)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(11,11,12,.88) 0%,rgba(11,11,12,.5) 34%,rgba(11,11,12,.05) 62%,rgba(11,11,12,.35) 100%),
+  linear-gradient(180deg,rgba(11,11,12,.5),transparent 28%,rgba(11,11,12,.8) 100%)}
+.route{position:absolute;z-index:-1;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8}
+.route path{fill:none;stroke:url(#rg);stroke-width:2;stroke-linecap:round;stroke-dasharray:2400;stroke-dashoffset:2400;animation:draw 3.4s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);margin-bottom:1.2rem}
+.hero h1 span{display:block}
+.hero h1 .accent{color:var(--ldi-soft)}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.3rem);color:#e6e6e6;max-width:30ch}
+.hero .alt{margin-top:1.6rem}
+
+/* form card */
+.card{border-radius:var(--r-card);background:rgba(16,16,17,.78);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 0 rgba(255,255,255,.12),0 40px 80px -30px rgba(0,0,0,.9);padding:clamp(1.3rem,2.4vw,2rem)}
+.card h2{font-size:1.5rem;max-width:none;letter-spacing:-.02em}
+.card .hint{font-size:.85rem;color:var(--grey);margin-top:.3rem}
+.bar{height:3px;border-radius:3px;background:rgba(255,255,255,.1);margin:1.2rem 0 1.4rem;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ldi);transform-origin:left;transform:scaleX(var(--p,.333));transition:transform .7s var(--ease)}
+.stepl{font-size:.78rem;color:var(--grey);margin-bottom:1rem;display:flex;justify-content:space-between}
+.pane{display:none;animation:in .6s var(--ease)}
+.pane.on{display:block}
+@keyframes in{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.f{display:grid;gap:.4rem;min-width:0}.f.full{grid-column:1/-1}
+.f label,.f .lb{font-size:.78rem;color:#cfcfcf;font-weight:400}
+.f input,.f select{width:100%;min-height:46px;background:rgba(255,255,255,.06);border:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);border-radius:var(--r-input);padding:.7rem .9rem;font-size:.95rem;color:#fff;transition:box-shadow .4s var(--ease),background .4s var(--ease)}
+.f input::placeholder{color:#8f8f8f}
+.f select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23a3a3a3' stroke-width='1.5'><path d='M1 1.5l5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right .9rem center;padding-right:2.2rem}
+.f select option{background:#161616;color:#fff}
+.f input:focus,.f select:focus{outline:0;background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1.5px var(--ldi-soft)}
+.f input:user-invalid,.f select:user-invalid{box-shadow:inset 0 0 0 1.5px #ff6b6b}
+.phone{display:grid;grid-template-columns:6.4rem 1fr;gap:.5rem}
+.consent{display:flex;gap:.7rem;font-size:.76rem;color:#bdbdbd;line-height:1.5;margin-top:1rem}
+.consent input{flex:none;width:20px;height:20px;margin-top:.1rem;accent-color:var(--ldi)}
+.nav2{display:flex;gap:.8rem;align-items:center;margin-top:1.3rem}
+.back{background:none;border:0;cursor:pointer;color:var(--grey);font-size:.85rem;padding:.6rem .4rem;text-decoration:underline;text-underline-offset:4px}
+.hp{position:absolute;left:-9999px;opacity:0}
+.fine{font-size:.74rem;color:var(--grey);margin-top:1rem;line-height:1.5}
+.err{display:none;margin-top:.8rem;font-size:.85rem;color:#ff9a9a}.err.show{display:block}
+.ok{display:none;text-align:center;padding:1rem 0}.ok.show{display:block}
+.ok h3{font-size:1.8rem;margin:1rem 0 .6rem}
+.tick{width:60px;height:60px;border-radius:50%;margin:auto;display:grid;place-items:center;background:rgba(240,84,9,.14);box-shadow:inset 0 0 0 1px rgba(240,84,9,.6);color:var(--ldi-soft)}
+.pv{font-size:.72rem;color:var(--grey);margin-top:1rem}
+
+/* how it works */
+.how .jgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,6rem)}
+.sticky{position:sticky;top:7rem;align-self:start}
+.sticky .btn{margin-top:2rem}
+.steps{position:relative;display:grid;gap:1.2rem;padding-left:2.2rem}
+.rail{position:absolute;left:0;top:0;bottom:0;width:2px;background:rgba(255,255,255,.1)}
+.rail i{position:absolute;inset:0;background:linear-gradient(var(--ldi),var(--ldi-soft));transform-origin:top;transform:scaleY(1)}
+@supports (animation-timeline:view()){
+  .rail i{transform:scaleY(0);animation:fill linear both;animation-timeline:view();animation-range:entry 35% cover 65%}
+  @keyframes fill{to{transform:scaleY(1)}}
+}
+.spot{position:relative;border-radius:var(--r-card);background:var(--ink-3);padding:clamp(1.4rem,2.6vw,2.2rem);box-shadow:inset 0 0 0 1px var(--line);overflow:hidden;isolation:isolate}
+.spot::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .5s var(--ease);background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(240,84,9,.2),transparent 60%)}
+.spot:hover::before{opacity:1}
+.spot::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .5s var(--ease);box-shadow:inset 0 0 0 1px rgba(255,122,61,.55);-webkit-mask:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),#000,transparent 70%);mask:radial-gradient(220px circle at var(--mx,50%) var(--my,50%),#000,transparent 70%)}
+.spot:hover::after{opacity:1}
+.step .big{font-family:var(--display);font-weight:800;font-size:4rem;line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(255,122,61,.7);margin-bottom:1rem}
+.step p{color:#cbcbcb;font-size:.95rem;margin-top:.7rem;max-width:46ch}
+
+/* programmes: image-led */
+.progs{background:var(--ink-2)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
+.pc{position:relative;min-height:clamp(480px,62vw,640px);border-radius:var(--r-card);overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line)}
+.pc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.pc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,11,12,0) 30%,rgba(11,11,12,.92) 100%)}
+.pc:hover img{transform:scale(1.06)}
+.pc .in{padding:clamp(1.4rem,2.6vw,2.2rem);width:100%}
+.pc h3{font-size:clamp(1.6rem,3vw,2.4rem)}
+.pc p{margin-top:.6rem;color:#dadada;font-size:.95rem;max-width:40ch}
+.pc ul{list-style:none;display:grid;gap:.4rem;margin-top:1rem;font-size:.88rem;color:#e6e6e6}
+.pc li{padding-left:1.2rem;position:relative}
+.pc li::before{content:"";position:absolute;left:0;top:.7em;width:.6rem;height:1px;background:var(--ldi-soft)}
+.pc .btn{margin-top:1.3rem}
+.later{margin-top:1.4rem;font-size:.88rem;color:var(--grey)}
+
+/* statement band */
+.band{padding:0;min-height:100dvh;display:grid;align-items:center;overflow:hidden;isolation:isolate}
+.band .bg{position:absolute;inset:-8% 0;z-index:-2}
+.band .bg img{width:100%;height:100%;object-fit:cover}
+@supports (animation-timeline:view()){.band .bg{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{transform:translateY(-6%)}to{transform:translateY(6%)}}}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,11,12,.93),rgba(11,11,12,.7) 40%,rgba(11,11,12,.1) 75%),linear-gradient(180deg,var(--ink-2),transparent 18%,transparent 82%,var(--ink))}
+.band h2{font-size:clamp(2.2rem,6vw,5rem);max-width:16ch;text-shadow:0 2px 30px rgba(0,0,0,.6)}
+.w{display:inline-block;opacity:.18;filter:blur(6px);transform:translateY(12px);transition:opacity .7s var(--ease),filter .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i) * 70ms)}
+.band.in .w{opacity:1;filter:none;transform:none}
+.band .fine{max-width:46ch;margin-top:1.6rem;font-size:.85rem;color:#d0d0d0}
+
+/* requirements bento (4 items, 4 cells) */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1.2rem;margin-top:3rem}
+.b1{grid-column:span 7}.b2{grid-column:span 5}.b3{grid-column:span 5}.b4{grid-column:span 7}
+.bento h3{font-size:1.5rem;margin-bottom:.8rem}
+.bento p{color:#cbcbcb;font-size:.95rem;max-width:52ch}
+.check{list-style:none;margin-top:1.2rem;display:grid;gap:.6rem}
+.check li{font-size:.9rem;color:#dedede;padding-left:1.5rem;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:.7em;width:.8rem;height:1px;background:var(--ldi-soft)}
+.note{margin-top:1.4rem;padding:1rem 1.1rem;border-radius:12px;background:rgba(240,84,9,.1);box-shadow:inset 0 0 0 1px rgba(240,84,9,.35);font-size:.85rem;color:#ffe0d0}
+.img-cell{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;min-height:340px;padding:clamp(1.4rem,2.6vw,2.2rem);border-radius:var(--r-card);box-shadow:inset 0 0 0 1px var(--line)}
+.img-cell img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease)}
+.img-cell::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,11,12,.05) 20%,rgba(11,11,12,.9))}
+.img-cell:hover img{transform:scale(1.05)}
+.grad-cell{background:linear-gradient(140deg,#c2410c 0%,#F05409 45%,#8a2c05 100%);color:var(--btn-ink);box-shadow:none}
+.grad-cell p{color:#2a1205}
+.grad-cell h3{color:#160a04}
+
+/* trust + faq */
+.trust{background:var(--ink-2)}
+.tgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.who{display:grid;gap:1.6rem;margin-top:2rem}
+.who h3{font-size:1.1rem;color:var(--ldi-soft);margin-bottom:.3rem}
+.who p{font-size:.95rem;color:#cbcbcb;max-width:44ch}
+details{border-bottom:1px solid var(--line);padding:1.2rem 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-family:var(--display);font-weight:600;font-size:1.05rem}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);position:relative;transition:transform .6s var(--ease)}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:#fff;transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{transform:rotate(45deg)}
+details p{margin-top:.9rem;color:#c4c4c4;font-size:.95rem;max-width:58ch}
+
+/* final cta */
+.final{text-align:left;background:radial-gradient(60% 80% at 85% 100%,rgba(240,84,9,.28),transparent 70%),var(--ink)}
+.final h2{font-size:clamp(2.4rem,6.5vw,5.4rem);max-width:14ch}
+.final .ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+
+footer{padding:3.5rem 0 4rem;border-top:1px solid var(--line);font-size:.85rem;color:var(--grey)}
+.fgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2rem}
+.fgrid h4{font-family:var(--display);font-size:.9rem;color:#fff;margin-bottom:.7rem;font-weight:600}
+.fgrid a{display:block;padding:.15rem 0;transition:color .4s var(--ease)}.fgrid a:hover{color:#fff}
+.legal{margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.75rem;max-width:90ch}
+.stick{display:none}
+
+@media (max-width:1180px){.navlinks{display:none}}
+@media (max-width:900px){
+  .navlinks{display:none}
+  .hgrid,.how .jgrid,.pgrid,.tgrid,.fgrid{grid-template-columns:1fr}
+  .sticky{position:static}
+  .b1,.b2,.b3,.b4{grid-column:1/-1}
+  .hero{padding-top:6rem}
+  .hero-bg img{width:100%;margin-left:0;object-position:30% 50%}
+  .stick{display:flex;position:fixed;left:.6rem;right:.6rem;bottom:.6rem;z-index:var(--z-sticky);pointer-events:none;transform:translateY(140%);transition:transform .6s var(--ease)}
+  .stick.show{transform:none}
+  .stick .btn{pointer-events:auto;width:100%;justify-content:space-between;box-shadow:0 20px 50px -10px rgba(0,0,0,.9)}
+  footer{padding-bottom:6.5rem}
+}
+@media (max-width:640px){
+  .fg{grid-template-columns:1fr}
+  .pill{gap:.6rem}
+  .pill .btn{display:none}
+  .plate{padding:.4rem 1.1rem;gap:.8rem}
+  .logo{height:36px}.logo.m{height:32px}
+  .hero h1{font-size:clamp(2.8rem,14vw,4rem)}
+  .final .ctas .btn{width:100%;justify-content:space-between}
+}
+@media (max-width:380px){.plate{gap:.6rem;padding:.35rem .8rem}.logo{height:30px}.logo.m{height:26px}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv,.w{opacity:1;transform:none;filter:none}
+  .route path{stroke-dashoffset:0}
+  .rail i{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Primary">
+  <div class="pill">
+    <a class="plate" href="#top" aria-label="LD Training and MSM Unify">
+      <img class="logo" src="img/ldt-logo.png" alt="LD Training" width="389" height="128">
+      <span class="vd"></span>
+      <img class="logo m" src="img/msmunify-logo.png" alt="MSM Unify" width="300" height="94">
+    </a>
+    <div class="navlinks"><a href="#how">How it works</a><a href="#programmes">Programmes</a><a href="#requirements">Requirements</a><a href="#faq">FAQ</a></div>
+    <a class="btn mag" href="#apply" data-track="nav_cta">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="img/hero.jpg" alt="A student studying at a desk by a window at sunset" fetchpriority="high" width="1800" height="1007"></div>
+  <svg class="route" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs><linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#F05409" stop-opacity="0"/><stop offset=".5" stop-color="#F05409"/><stop offset="1" stop-color="#ffe2d2"/></linearGradient></defs>
+    <path d="M-40 840 C 280 820, 440 560, 720 560 S 1130 240, 1500 100"/>
+  </svg>
+
+  <div class="wrap hgrid">
+    <div>
+      <span class="eyebrow rv">Applications open 5 October</span>
+      <h1 class="rv" style="--d:1"><span>Start Here.</span><span class="accent">Go Further.</span></h1>
+      <p class="sub rv" style="--d:2" id="sub">Big plans. No packing, yet. Begin online with LDI, with potential progression to a UK university.</p>
+      <p class="alt rv" style="--d:3"><a class="link" id="wa-hero" href="#" target="_blank" rel="noopener" data-track="wa_hero">Prefer to talk? Message MSM Unify on WhatsApp</a></p>
+    </div>
+
+    <div class="card rv" style="--d:2" id="apply">
+      <form id="lead" novalidate autocomplete="on">
+        <h2>Check your eligibility</h2>
+        <p class="hint">Three short steps. A counsellor replies with your next step.</p>
+        <div class="bar"><i id="prog"></i></div>
+        <div class="stepl"><span id="stepname">About you</span><span id="stepnum">Step 1 of 3</span></div>
+
+        <div class="pane on" data-step="1">
+          <div class="fg">
+            <div class="f"><label for="fn">First name</label><input id="fn" name="First_Name" required autocomplete="given-name"></div>
+            <div class="f"><label for="ln">Last name</label><input id="ln" name="Last_Name" required autocomplete="family-name"></div>
+            <div class="f full"><label for="em">Email</label><input id="em" name="Email" type="email" required autocomplete="email" placeholder="you@example.com"></div>
+            <div class="f full"><span class="lb" id="phl">Mobile or WhatsApp</span>
+              <div class="phone">
+                <select name="dial" aria-label="Country code" required>
+                  <option value="+91">+91 IN</option><option value="+92">+92 PK</option><option value="+94">+94 LK</option><option value="+971">+971 AE</option><option value="+234">+234 NG</option><option value="+233">+233 GH</option><option value="+977">+977 NP</option><option value="+44">+44 UK</option>
+                </select>
+                <input name="Phone" type="tel" inputmode="tel" required autocomplete="tel-national" aria-labelledby="phl">
+              </div></div>
+          </div>
+        </div>
+
+        <div class="pane" data-step="2">
+          <div class="fg">
+            <div class="f"><label for="co">Country of residence</label>
+              <select id="co" name="Country" required><option value="">Select</option><option>India</option><option>Pakistan</option><option>Sri Lanka</option><option>United Arab Emirates</option><option>Nigeria</option><option>Ghana</option><option>Nepal</option><option>Other</option></select></div>
+            <div class="f"><label for="ci">City</label><input id="ci" name="City" required autocomplete="address-level2"></div>
+            <div class="f full"><label for="pr">Programme interest</label>
+              <select id="pr" name="programme" required><option value="">Select</option><option>Business and Management</option><option>Accounting and Finance</option><option>Not sure yet</option></select></div>
+            <div class="f full"><label for="ag">Age band</label>
+              <select id="ag" name="age" required><option value="">Select</option><option>16 to 17</option><option>18 to 24</option><option>25 to 34</option><option>35 and over</option></select></div>
+          </div>
+        </div>
+
+        <div class="pane" data-step="3">
+          <div class="fg">
+            <div class="f"><label for="hq">Highest qualification</label>
+              <select id="hq" name="qualification" required><option value="">Select</option><option>Secondary school (in progress)</option><option>Secondary school (completed)</option><option>Diploma or foundation</option><option>Undergraduate degree</option><option>Postgraduate degree</option></select></div>
+            <div class="f"><label for="cy">Year completed</label><input id="cy" name="year" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="2025" required></div>
+            <div class="f"><label for="en">English test status</label>
+              <select id="en" name="english" required><option value="">Select</option><option>Test completed</option><option>Test booked</option><option>Not taken yet</option><option>Not sure what is needed</option></select></div>
+            <div class="f"><label for="in">Preferred intake</label>
+              <select id="in" name="intake" required><option value="">Select</option><option>As soon as possible</option><option>Within 3 to 6 months</option><option>Just exploring</option></select></div>
+            <div class="f full"><label for="ch">Best way to reach you</label>
+              <select id="ch" name="channel" required><option value="">Select</option><option>WhatsApp</option><option>Phone call</option><option>Email</option></select></div>
+          </div>
+          <label class="consent"><input type="checkbox" name="consent" required><span>I agree that MSM Unify and LD International may contact me about this programme by phone, WhatsApp and email, and store my details for that purpose.</span></label>
+        </div>
+
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="nav2">
+          <button class="back" type="button" id="back" hidden>Back</button>
+          <button class="btn mag" type="button" id="next">Continue <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+          <button class="btn mag" type="submit" id="go" hidden>Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></button>
+        </div>
+        <p class="err" id="err" role="alert">Something went wrong sending your details. Please try again in a moment.</p>
+        <p class="fine">Potential progression to a UK university is subject to the relevant academic and English language requirements.</p>
+      </form>
+
+      <div class="ok" id="ok" role="status" tabindex="-1">
+        <div class="tick"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3>You are on your way.</h3>
+        <p class="lead" style="margin:.4rem auto 1.4rem">An MSM Unify counsellor will contact you through your chosen channel. Want an answer sooner?</p>
+        <a class="btn" id="wa-ok" href="#" target="_blank" rel="noopener" data-track="wa_success">Message us on WhatsApp <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+        <p class="pv" id="pv" hidden>Preview mode: lead capture is not connected, so nothing was sent.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="how" id="how">
+  <div class="wrap jgrid">
+    <div class="sticky">
+      <span class="eyebrow rv">How it works</span>
+      <h2 class="rv" style="--d:1">Three moves. Each one explained before you commit.</h2>
+      <p class="lead rv" style="--d:2">It could be a login, a lesson and a clear plan. No flight required for the first step.</p>
+      <a class="btn mag rv" style="--d:3" href="#apply" data-track="how_cta">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+    </div>
+    <div class="steps">
+      <div class="rail"><i></i></div>
+      <article class="spot step rv"><div class="big">01</div><h3>Start online, from where you are</h3><p>Begin your Business and Management or Accounting and Finance pathway online. Build academic momentum now, without relocating and without losing a semester.</p></article>
+      <article class="spot step rv"><div class="big">02</div><h3>Study with real support</h3><p>Online should never mean alone. Expect teaching, structure and guidance from enquiry to application, with an MSM Unify counsellor beside you.</p></article>
+      <article class="spot step rv"><div class="big">03</div><h3>Progress with clarity</h3><p>When you meet the academic and English language requirements, you have the potential to progress to a UK university. We explain exactly what that involves before you apply.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="progs" id="programmes">
+  <div class="wrap">
+    <h2 class="rv">Pick the subject that fits your ambition.</h2>
+    <p class="lead rv" style="--d:1">Two pathways to start. A counsellor confirms the programme details for your profile.</p>
+    <div class="pgrid">
+      <article class="pc rv" data-prog="Business and Management" tabindex="0" role="button" aria-label="Choose Business and Management and open the form">
+        <img src="img/business.jpg" alt="A student studying business on a laptop at home" loading="lazy" width="1000" height="1250">
+        <div class="in"><h3>Business and Management</h3><p>Broad business fluency, leadership grounding and a foundation for your next academic move.</p>
+          <ul><li>How organisations are run, led and grown</li><li>Relevant to family firms, start-ups and corporate careers</li><li>Online delivery that fits around your week</li></ul>
+          <span class="btn" style="margin-top:1.3rem">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></span></div>
+      </article>
+      <article class="pc rv" style="--d:1" data-prog="Accounting and Finance" tabindex="0" role="button" aria-label="Choose Accounting and Finance and open the form">
+        <img src="img/finance.jpg" alt="A student working through financial charts with a calculator" loading="lazy" width="1000" height="1250">
+        <div class="in"><h3>Accounting and Finance</h3><p>A credible grounding in how money, risk and reporting work, for people who think in numbers.</p>
+          <ul><li>Financial literacy employers recognise</li><li>Useful across industries, from practice to entrepreneurship</li><li>Online delivery that fits around your week</li></ul>
+          <span class="btn" style="margin-top:1.3rem">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></span></div>
+      </article>
+    </div>
+    <p class="later rv">Postgraduate and MBA pathways follow. Register your interest and we will keep you informed.</p>
+  </div>
+</section>
+
+<section class="band" id="band">
+  <div class="bg"><img src="img/campus.jpg" alt="A UK university quad at sunset seen through a study window" loading="lazy" width="1800" height="771"></div>
+  <div class="wrap">
+    <h2 id="statement">Potential progression to a UK university, when you are ready and eligible.</h2>
+    <p class="fine rv">Potential progression is subject to the relevant academic and English language requirements. We never promise admission, a visa or a job.</p>
+  </div>
+</section>
+
+<section id="requirements">
+  <div class="wrap">
+    <span class="eyebrow rv">Straight answers</span>
+    <h2 class="rv" style="--d:1">Requirements, in plain language.</h2>
+    <div class="bento">
+      <article class="spot b1 rv">
+        <h3>Entry and potential progression conditions</h3>
+        <p>Admission is assessed against the programme requirements. Potential progression to a UK university depends on meeting the relevant academic and English language requirements.</p>
+        <ul class="check"><li>Your highest qualification and completion year</li><li>Your English language test status</li><li>Your preferred intake and study commitment</li></ul>
+        <div class="note">Exact requirements depend on your country and qualification. Share your details and a counsellor confirms them in one conversation.</div>
+      </article>
+      <article class="img-cell b2 rv" style="--d:1">
+        <img src="img/support.jpg" alt="A student on a video call with an education counsellor" loading="lazy" width="1400" height="783">
+        <div><h3>People you can name</h3><p>A counsellor guides you from enquiry to application, by video, phone or WhatsApp.</p></div>
+      </article>
+      <article class="spot grad-cell b3 rv">
+        <h3>Fees, with no surprises</h3>
+        <p>We share verified tuition and any applicable fees clearly before you apply. Send your country and programme interest to get the correct figures.</p>
+      </article>
+      <article class="spot b4 rv" style="--d:1">
+        <h3>A learning format built around your week</h3>
+        <p>The starting stage is delivered online, so you can begin from home. We share the schedule, learning commitment and potential progression details for your chosen programme before you apply.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="faq">
+  <div class="wrap tgrid">
+    <div>
+      <h2 class="rv">Who is behind this.</h2>
+      <div class="who rv" style="--d:1">
+        <div><h3>LD International</h3><p>The education proposition. LDI leads the programme, the academic standards and the framework for potential progression to the UK.</p></div>
+        <div><h3>MSM Unify</h3><p>Your recruitment and application support partner. MSM Unify counsellors help you understand the route and move from enquiry to application.</p></div>
+      </div>
+    </div>
+    <div class="rv" style="--d:1">
+      <details open><summary>Is admission guaranteed?<i></i></summary><p>No. Admission is assessed against the programme requirements. Share your details and we will help you understand the eligibility steps.</p></details>
+      <details><summary>Will I definitely progress to the UK?<i></i></summary><p>Potential progression is subject to the relevant academic and English language requirements. We can explain the route and what you would need to achieve.</p></details>
+      <details><summary>Is it fully online?<i></i></summary><p>The starting stage is delivered online. We can share the learning format, schedule and potential progression details for your chosen programme.</p></details>
+      <details><summary>How much does it cost?<i></i></summary><p>We will share the verified tuition and any applicable fees clearly before you apply. Send us your country and programme interest for the correct information.</p></details>
+      <details><summary>Can I work while studying?<i></i></summary><p>That depends on your schedule and circumstances. We can explain the learning commitment so you can judge whether it fits your week.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="rv">Someday is not an intake.</h2>
+    <p class="lead rv" style="--d:1">Applications are open. Check the requirements and take the first clear step while the window is open.</p>
+    <div class="ctas rv" style="--d:2">
+      <a class="btn mag" href="#apply" data-track="final_cta">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+      <a class="btn ghost" id="wa-final" href="#" target="_blank" rel="noopener" data-track="wa_final">Chat on WhatsApp <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><span class="plate" style="display:inline-flex"><img class="logo" src="img/ldt-logo.png" alt="LD Training" width="389" height="128" loading="lazy"><span class="vd"></span><img class="logo m" src="img/msmunify-logo.png" alt="MSM Unify" width="300" height="94" loading="lazy"></span><p style="margin-top:1rem;max-width:34ch">Global Education, Building Careers.</p></div>
+      <div><h4>Talk to MSM Unify</h4><a href="tel:+9118005700174">1800 5700 174 (India toll-free)</a><a id="wa-foot" href="#" target="_blank" rel="noopener">WhatsApp +91 75730 00329</a><a href="mailto:support@msmunify.com">support@msmunify.com</a></div>
+      <div><h4>Online</h4><a href="https://www.msmunify.com" target="_blank" rel="noopener">www.msmunify.com</a><a href="https://www.msmunify.com/contact-us/" target="_blank" rel="noopener">All contact details</a></div>
+    </div>
+    <p class="legal">LD International programmes, with application support from MSM Unify. Potential progression to a UK university is subject to the relevant academic and English language requirements. Programme details, tuition and intakes are confirmed by LDI before you apply.</p>
+  </div>
+</footer>
+
+<div class="stick" id="stick"><a class="btn" href="#apply" data-track="sticky_cta">Check my eligibility <span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12L12 4M5.5 4H12v6.5"/></svg></span></a></div>
+
+<script>
+/* ============ CONFIG: set before launch ============ */
+const CONFIG = {
+  ZOHO_ACTION: "",              // Zoho Web-to-Lead action URL, e.g. https://crm.zoho.com/crm/WebToLeadForm
+  ZOHO_XNQSJSDP: "",            // hidden field xnQsjsdp from the Zoho form
+  ZOHO_XMIWTLD: "",             // hidden field xmIwtLD from the Zoho form
+  ZOHO_ACTIONTYPE: "TGVhZHM=",  // base64 for "Leads"
+  LEAD_SOURCE: "",              // optional: existing Lead Source picklist value
+  COMPANY: "LDI Landing Page",
+  WHATSAPP_NUMBER: "917573000329",   // MSM Unify business WhatsApp, as published on msmunify.com
+  WHATSAPP_TEXT: "Hi, I would like to check my eligibility for the LDI online pathway with potential UK progression."
+};
+
+const DOORS = {
+  india:["Do not put your future on pause.","India","+91"],
+  pakistan:["Your potential UK direction can begin from your own desk.","Pakistan","+92"],
+  srilanka:["Keep moving forward without waiting for the perfect moment.","Sri Lanka","+94"],
+  uae:["Built in the UAE. Ready for what is next.","United Arab Emirates","+971"],
+  nigeria:["Your drive already travels. Give it a direction.","Nigeria","+234"],
+  ghana:["Start in Ghana. Build toward a wider world.","Ghana","+233"],
+  nepal:["The next climb can begin closer to home.","Nepal","+977"]
+};
+const q = new URLSearchParams(location.search), mk = (q.get('m')||'').toLowerCase();
+if (DOORS[mk]) {
+  document.getElementById('sub').textContent = DOORS[mk][0] + " Begin online with LDI, with potential progression to a UK university.";
+  document.getElementById('co').value = DOORS[mk][1];
+  document.querySelector('[name=dial]').value = DOORS[mk][2];
+}
+
+/* whatsapp links */
+const wa = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(CONFIG.WHATSAPP_TEXT)}`;
+['wa-hero','wa-ok','wa-final','wa-foot'].forEach(id=>{const a=document.getElementById(id);if(a)a.href=wa});
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* scroll reveals */
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* word-by-word blur reveal on the statement (port of the 21st.dev text reveal pattern) */
+(()=>{const h=document.getElementById('statement');const words=h.textContent.trim().split(/\s+/);h.setAttribute('aria-label',h.textContent.trim());
+  h.innerHTML=words.map((w,i)=>`<span class="w" style="--i:${i}" aria-hidden="true">${w}</span>`).join(' ');
+  const b=document.getElementById('band');new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){b.classList.add('in');o.disconnect()}}),{threshold:.35}).observe(b)})();
+
+/* cursor spotlight cards (port of the 21st.dev spotlight card pattern) */
+document.querySelectorAll('.spot').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+
+/* magnetic buttons, fine pointers only */
+if (!reduce && matchMedia('(hover:hover) and (pointer:fine)').matches){
+  document.querySelectorAll('.mag').forEach(b=>{
+    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)*.18,y=(e.clientY-r.top-r.height/2)*.28;b.style.transform=`translate(${x}px,${y}px)`});
+    b.addEventListener('pointerleave',()=>{b.style.transform=''});
+  });
+}
+
+/* programme cards set the form and scroll to it */
+document.querySelectorAll('.pc').forEach(c=>{
+  const go=()=>{document.getElementById('pr').value=c.dataset.prog;document.getElementById('apply').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});setTimeout(()=>document.getElementById('fn').focus({preventScroll:true}),600)};
+  c.addEventListener('click',go);c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+});
+
+/* mobile sticky CTA: shows once the hero form has scrolled out of view */
+const stick=document.getElementById('stick');
+new IntersectionObserver(es=>es.forEach(e=>stick.classList.toggle('show',!e.isIntersecting && e.boundingClientRect.top<0)),{threshold:0}).observe(document.getElementById('apply'));
+
+/* 3-step form */
+const form=document.getElementById('lead'),panes=[...form.querySelectorAll('.pane')],next=document.getElementById('next'),back=document.getElementById('back'),go=document.getElementById('go');
+const names=['About you','Your plans','Your background'];let step=0;
+function show(i){step=i;panes.forEach((p,k)=>p.classList.toggle('on',k===i));
+  document.getElementById('prog').style.setProperty('--p',(i+1)/3);
+  document.getElementById('stepname').textContent=names[i];document.getElementById('stepnum').textContent=`Step ${i+1} of 3`;
+  back.hidden=i===0;next.hidden=i===2;go.hidden=i!==2;}
+function valid(){const fs=[...panes[step].querySelectorAll('input,select')];for(const f of fs){if(!f.checkValidity()){f.reportValidity();return false}}return true}
+next.addEventListener('click',()=>{if(valid())show(step+1)});
+back.addEventListener('click',()=>show(step-1));
+form.addEventListener('keydown',e=>{if(e.key==='Enter'&&step<2&&e.target.tagName!=='BUTTON'){e.preventDefault();next.click()}});
+
+const utm={};['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(k=>{const v=q.get(k);if(v){utm[k]=v;try{sessionStorage.setItem(k,v)}catch(e){}}else{try{const s=sessionStorage.getItem(k);if(s)utm[k]=s}catch(e){}}});
+const err=document.getElementById('err');
+
+form.addEventListener('submit',async ev=>{
+  ev.preventDefault();err.classList.remove('show');
+  if(form.website.value)return;
+  if(!valid())return;
+  const d=Object.fromEntries(new FormData(form));
+  const phone=d.dial+String(d.Phone).replace(/[^\d]/g,'').replace(/^0+/,'');
+  const desc=[
+    '[LDI Online UK Pathway landing page]','Enquirer: Student',`Programme interest: ${d.programme}`,`Age band: ${d.age}`,
+    `Highest qualification: ${d.qualification} (${d.year})`,`Preferred intake: ${d.intake}`,`English test status: ${d.english}`,`Preferred channel: ${d.channel}`,
+    `Market link: ${mk||'none'}`,'Consent: yes (MSM Unify and LDI)',
+    `UTM: ${Object.entries(utm).map(([k,v])=>k+'='+v).join(', ')||'none'}`
+  ].join('\n');
+  const body=new URLSearchParams({
+    xnQsjsdp:CONFIG.ZOHO_XNQSJSDP,xmIwtLD:CONFIG.ZOHO_XMIWTLD,actionType:CONFIG.ZOHO_ACTIONTYPE,
+    'First Name':d.First_Name,'Last Name':d.Last_Name,Email:d.Email,Phone:phone,Country:d.Country,City:d.City,
+    Company:CONFIG.COMPANY,Description:desc,Original_Lead_Source:'LDI Landing Page',
+    Original_Traffic_Source:[utm.utm_source,utm.utm_medium,utm.utm_campaign].filter(Boolean).join(' / ')||'Direct'
+  });
+  if(CONFIG.LEAD_SOURCE)body.set('Lead Source',CONFIG.LEAD_SOURCE);
+  const live=CONFIG.ZOHO_ACTION&&CONFIG.ZOHO_XNQSJSDP&&CONFIG.ZOHO_XMIWTLD;
+  go.disabled=true;
+  try{
+    if(live){await fetch(CONFIG.ZOHO_ACTION,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})}
+    else{console.info('[preview] Lead payload not sent:',Object.fromEntries(body));document.getElementById('pv').hidden=false}
+    window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'ldi_lead_submit',market:mk||'none',programme:d.programme});
+    form.hidden=true;const ok=document.getElementById('ok');ok.classList.add('show');ok.focus();
+  }catch(e){err.classList.add('show');go.disabled=false}
+});
+
+document.addEventListener('click',e=>{const t=e.target.closest('[data-track]');if(t){window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'ldi_cta',cta:t.dataset.track})}});
+</script>
+</body>
+</html>
